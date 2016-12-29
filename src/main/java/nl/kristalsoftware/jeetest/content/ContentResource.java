@@ -19,7 +19,14 @@ public class ContentResource {
     private ContentService contentService;
 
     @GET
-    public JsonObject getContent() {
+    @Path("card")
+    public JsonObject getCardContent() {
+        return contentService.getContent();
+    }
+
+    @GET
+    @Path("image")
+    public JsonObject getImageContent() {
         return contentService.getContent();
     }
 }
