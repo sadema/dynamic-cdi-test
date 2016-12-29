@@ -7,6 +7,7 @@ import javax.json.JsonObject;
 /**
  * Created by sjoerdadema on 28/12/16.
  */
+@TypeQualifier("Card")
 public class CardContentService implements ContentService {
 
     @Inject

@@ -16,6 +16,7 @@ import javax.ws.rs.Produces;
 public class ContentResource {
 
     @Inject
+    @TypeQualifier("Image")
     private ContentService contentService;
 
     @GET
