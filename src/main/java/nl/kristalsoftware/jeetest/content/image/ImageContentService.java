@@ -1,4 +1,7 @@
-package nl.kristalsoftware.jeetest.content;
+package nl.kristalsoftware.jeetest.content.image;
+
+import nl.kristalsoftware.jeetest.content.ContentService;
+import nl.kristalsoftware.jeetest.content.TypeQualifier;
 
 import javax.json.Json;
 import javax.json.JsonObject;

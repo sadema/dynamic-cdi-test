@@ -1,6 +1,11 @@
 package nl.kristalsoftware.jeetest.content;
 
+import nl.kristalsoftware.jeetest.content.card.CardTypeSelector;
+import nl.kristalsoftware.jeetest.content.image.ImageTypeSelector;
+
 import javax.ejb.Stateless;
+import javax.enterprise.inject.Any;
+import javax.enterprise.inject.Instance;
 import javax.inject.Inject;
 import javax.json.JsonObject;
 import javax.ws.rs.GET;
@@ -16,18 +21,20 @@ import javax.ws.rs.Produces;
 public class ContentResource {
 
     @Inject
-    @TypeQualifier("Image")
-    private ContentService contentService;
+    @Any
+    private Instance<ContentService> contentServiceSelectors;
 
     @GET
     @Path("card")
     public JsonObject getCardContent() {
+        ContentService contentService = contentServiceSelectors.select(new CardTypeSelector()).get();
         return contentService.getContent();
     }
 
     @GET
     @Path("image")
     public JsonObject getImageContent() {
+        ContentService contentService = contentServiceSelectors.select(new ImageTypeSelector()).get();
         return contentService.getContent();
     }
 }

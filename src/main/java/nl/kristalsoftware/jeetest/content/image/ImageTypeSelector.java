@@ -1,4 +1,6 @@
-package nl.kristalsoftware.jeetest.content;
+package nl.kristalsoftware.jeetest.content.image;
+
+import nl.kristalsoftware.jeetest.content.TypeQualifier;
 
 import java.lang.annotation.Annotation;
 
@@ -14,6 +16,6 @@ public class ImageTypeSelector implements TypeQualifier {
 
     @Override
     public Class<? extends Annotation> annotationType() {
-        return this.getClass();
+        return TypeQualifier.class;
     }
 }
