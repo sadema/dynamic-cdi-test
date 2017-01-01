@@ -16,7 +16,7 @@ public class CardContentService implements ContentService {
     public JsonObject getContent() {
         return Json.createObjectBuilder()
                 .add("type", "Card")
-                .add("title", "Hello World")
+                .add("title", "Hello Card")
                 .build();
     }
 

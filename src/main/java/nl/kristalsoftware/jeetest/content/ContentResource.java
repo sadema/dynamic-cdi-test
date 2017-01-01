@@ -3,7 +3,7 @@ package nl.kristalsoftware.jeetest.content;
 import nl.kristalsoftware.jeetest.content.card.CardTypeSelector;
 import nl.kristalsoftware.jeetest.content.image.ImageTypeSelector;
 
-import javax.ejb.Stateless;
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Any;
 import javax.enterprise.inject.Instance;
 import javax.inject.Inject;
@@ -15,7 +15,7 @@ import javax.ws.rs.Produces;
 /**
  * Created by sjoerdadema on 28/12/16.
  */
-@Stateless
+@RequestScoped
 @Path("content")
 @Produces("application/json")
 public class ContentResource {
